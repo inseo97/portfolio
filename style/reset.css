@@ -55,9 +55,8 @@ section.sec01 {
   width: 100%;
 
   height: 100vh;
-  padding: 35vh 0;
 }
-.sec01 p:nth-child(1) {
+.sec01 > p:nth-of-type(1) {
   width: 95vw;
   overflow: hidden;
   opacity: 0.05;
@@ -74,14 +73,22 @@ section.sec01 {
   transform: translate(-50%, -50%);
   position: fixed;
 }
-.sec01 p:nth-child(2) {
+.helloWrap {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.helloWrap p {
   font-size: 2rem;
   text-align: center;
   color: #000000;
 }
 .sec01 div.hello {
   width: 100%;
-  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
