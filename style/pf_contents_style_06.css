@@ -1,7 +1,6 @@
-.pf_content > img:nth-of-type(1) {
-  position: absolute;
+.pf_content {
+  width: calc(100vw - 450px);
+}
+.pf_content > img {
   width: 100%;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%);
 }
