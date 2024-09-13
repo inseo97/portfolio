@@ -13,43 +13,6 @@ $(function(){
     $('div.tab_item_code').css('display','block');
   })
 
-//  SEC 02 
-// function checkVisible( element, check = 'above' ) {
-//   const viewportHeight = $(window).height(); // Viewport Height
-//   const scrolltop = $(window).scrollTop(); // Scroll Top
-//   const y = $(element).offset().top;
-//   const elementHeight = $(element).height();   
-  
-//   // 반드시 요소가 화면에 보여야 할경우
-//   if (check == "visible") 
-//     return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
-      
-//   // 화면에 안보여도 요소가 위에만 있으면 (페이지를 로드할때 스크롤이 밑으로 내려가 요소를 지나쳐 버릴경우)
-//   if (check == "above") 
-//     return ((y < (viewportHeight + scrolltop)));
-// }
-
-// let isVisible = false;
-
-// const func = function () {
-//   if ( !isVisible && checkVisible('.sec02') ) {
-//     $(".info_stat").delay(5).animate({"width": "590px"},1500);
-//     $("#info_ad").animate({'border-radius': '40px'},1300);
-    
-//     $(".info_stat div").delay(500).animate({"opacity": 1},1000);
-//     $(".career").delay(500).animate({"opacity": 1},1000);
-
-//     $(".info_more").delay(1000).animate({"width": "332px"},800);
-      
-//       isVisible = true;
-//   }
-  
-//   isVisible && window.removeEventListener('scroll', func);
-
-// }
-// window.addEventListener('scroll', func);
-
-
 
 //////////////////////////////////////////////
 let isFuncRunning = false;
@@ -124,7 +87,7 @@ $(window).on("wheel", function(e) {
 
 
 /////////////////////////////////////////////
-
+let isFuncRunning2 = false;
 let text = "PORTFOLIO";
         let originalText = ""; // 원래 텍스트를 저장할 변수
         let typingFinished = false; // 타이핑 완료 여부를 저장
@@ -171,12 +134,12 @@ let text = "PORTFOLIO";
                 if (entry.isIntersecting) {
                     // .sec01 요소가 화면에 보일 때 typing() 실행
                     typing();
-          isFuncRunning = true;
+          isFuncRunning2 = true;
 
                 } else {
                     // .sec01 요소가 화면에서 사라지면 eraseText() 실행
                     eraseText();
-          isFuncRunning = false;
+          isFuncRunning2 = false;
 
                 }
             });
