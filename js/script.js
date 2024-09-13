@@ -59,9 +59,9 @@ observer.observe(target);
 
 // /////////////////////////////////////////////
 
+// 스크롤 1섹션씩
 
 ///////////////////////////////////////////////
-
 var mhtml = $("html");
 var page = 1;
 
@@ -81,6 +81,7 @@ $(window).on("wheel", function(e) {
   var posTop =(page-1) * $(window).height();
   mhtml.animate({scrollTop : posTop});
 })
+/////////////////////////////////////////////
 
 
 
