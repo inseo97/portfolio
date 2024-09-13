@@ -16,8 +16,8 @@ $(function(){
 
 //////////////////////////////////////////////
 let isFuncRunning = false;
-function func() {
-  $(".info_stat").delay(5).stop().animate({"width": "590px"},1000);
+function func1() {
+  $(".info_stat").delay(5).stop().animate({"width": "540px"},1000);
   $("#info_ad").stop().animate({'border-radius': '40px'},1000);
   
   $(".info_stat div").delay(500).stop().animate({"opacity": 1},1000);
@@ -25,6 +25,24 @@ function func() {
 
   $(".info_more").delay(500).stop().animate({"width": "332px"},800);
 }
+function func2() {
+    $(".info_stat").delay(5).stop().animate({"width": "590px"},1000);
+    $("#info_ad").stop().animate({'border-radius': '40px'},1000);
+    
+    $(".info_stat div").delay(500).stop().animate({"opacity": 1},1000);
+    $(".career").delay(500).stop().animate({"opacity": 1},1000);
+  
+    $(".info_more").delay(500).stop().animate(
+        {
+        "width": "330px",
+        // "height":" 450px",
+        // "margin-left":" 0",
+        // "z-index":" 11",
+        // "clear":" both",
+        "top":"-450px"
+        }
+        ,800);
+  }
 function refunc(){
   $(".info_stat").delay(5).stop().animate({"width": "50px"},800);
   $("#info_ad").stop().animate({'border-radius': '40px 40px 40px 0px'},800);
@@ -40,7 +58,15 @@ let observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
       if (entry.isIntersecting && !isFuncRunning) {
           // 요소가 화면에 보이면 func 함수 실행
-          func();
+          if($(window).width() < 1024) {
+            // window 크기가 1024보다 작을때
+            func2();
+            console.log('tlfgod')
+            } else {
+            // window 크기가 1024보다 클때
+            func1();
+
+            }
           isFuncRunning = true;
       } else {
           // 요소가 화면에서 사라지면 추가 작업을 여기서 할 수 있음 (선택사항)

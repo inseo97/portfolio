@@ -15,13 +15,14 @@
 }
 body,
 html {
-  width: 100%;
+  width: 100vw;
   background-color: #f6f6f6;
   font-family: "Poppins", sans-serif;
 }
 body {
   position: relative;
   z-index: -3;
+  overflow-x: hidden;
 }
 ul {
   list-style: none;
@@ -57,10 +58,10 @@ section.sec01 {
   height: 100vh;
 }
 .sec01 > p:nth-of-type(1) {
-  width: 95vw;
+  width: 90%;
   overflow: hidden;
   opacity: 0.05;
-  font-size: 20rem;
+  font-size: 19rem;
   font-family: "Poppins", sans-serif;
   font-weight: 900;
   font-style: normal;
@@ -129,8 +130,7 @@ section.sec01 {
 }
 
 section.sec02 {
-  width: 100%;
-  min-width: 1455px;
+  width: 100vw;
 
   height: 100vh;
   position: relative;
@@ -160,6 +160,7 @@ section.sec02 {
 .sec02 .info_pic img {
   position: absolute;
   border-radius: 40px;
+  width: 530px;
   bottom: 50px;
 }
 
@@ -312,6 +313,7 @@ section.sec02 {
   border-radius: 0 40px 40px 0;
   margin-left: -50px;
   overflow: hidden;
+  top: 0;
 }
 .sec02 .info_more a {
   position: absolute;
@@ -325,12 +327,11 @@ section.sec02 {
 }
 /* 작업물 모음 */
 .sec03 {
-  height: 2208px;
   display: flex;
   justify-content: center;
   align-content: flex-start;
   flex-wrap: wrap;
-  padding-top: 50px;
+  padding: 50px 0;
 }
 .works_wrap {
   width: 1455px;
