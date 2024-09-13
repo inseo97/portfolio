@@ -23,7 +23,7 @@ function func1() {
   $(".info_stat div").delay(500).stop().animate({"opacity": 1},1000);
   $(".career").delay(500).stop().animate({"opacity": 1},1000);
 
-  $(".info_more").delay(500).stop().animate({"width": "332px"},800);
+  $(".info_more").delay(500).stop().animate({"width": "330px"},800);
 }
 function func2() {
     $(".info_stat").delay(5).stop().animate({"width": "590px"},1000);
@@ -31,19 +31,16 @@ function func2() {
     
     $(".info_stat div").delay(500).stop().animate({"opacity": 1},1000);
     $(".career").delay(500).stop().animate({"opacity": 1},1000);
-  
-    $(".info_more").delay(500).stop().animate(
+
+    $(".info_more").stop().animate(
         {
-        "width": "330px",
-        // "height":" 450px",
-        // "margin-left":" 0",
-        // "z-index":" 11",
-        // "clear":" both",
-        "top":"-450px"
+            "width": "330px",
+            "border-top-right-radius": "40px"
         }
-        ,800);
+        ,500)
+
   }
-function refunc(){
+function refunc1(){
   $(".info_stat").delay(5).stop().animate({"width": "50px"},800);
   $("#info_ad").stop().animate({'border-radius': '40px 40px 40px 0px'},800);
   
@@ -52,25 +49,47 @@ function refunc(){
 
   $(".info_more").delay(300).stop().animate({"width": "50px"},500);
 }
+function refunc2(){
+    $(".info_stat").delay(5).stop().animate({"width": "0"},1000);
+    $("#info_ad").stop().animate({'border-radius': '40px 40px 40px 0px'},1000);
 
+    $(".info_stat div").delay(500).stop().animate({"opacity": 0},1000);
+    $(".career").delay(500).stop().animate({"opacity": 0},1000);
+
+    $(".info_more").stop().animate(
+        {
+            "width": "330px",
+            "border-top-right-radius": "0px"
+        }
+        ,500)
+
+}
 // IntersectionObserver 설정
 let observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
       if (entry.isIntersecting && !isFuncRunning) {
           // 요소가 화면에 보이면 func 함수 실행
-          if($(window).width() < 1024) {
-            // window 크기가 1024보다 작을때
+          if($(window).width() < 1480) {
+            // window 크기가 1480px보다 작을때
             func2();
-            console.log('tlfgod')
             } else {
-            // window 크기가 1024보다 클때
+            // window 크기가 1480px보다 클때
             func1();
 
             }
           isFuncRunning = true;
       } else {
           // 요소가 화면에서 사라지면 추가 작업을 여기서 할 수 있음 (선택사항)
-          refunc();
+          // 요소가 화면에 보이면 func 함수 실행
+          if($(window).width() < 1480) {
+            // window 크기가 1480px보다 작을때
+            refunc2();    
+            
+            } else {
+            // window 크기가 1480px보다 클때
+          refunc1();
+
+            }
           isFuncRunning = false;
       }
   });
