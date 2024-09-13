@@ -378,7 +378,8 @@ section.sec02 {
 }
 
 #wb01 {
-  background: url("../images/pf_1_react.png") right bottom no-repeat;
+  background: url("../images/pf_1_react.png") no-repeat;
+  background-position: right -3% bottom;
   background-color: #000000;
 
   background-size: 90%;
