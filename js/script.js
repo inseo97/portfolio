@@ -31,14 +31,17 @@ function func2() {
     
     $(".info_stat div").delay(500).stop().animate({"opacity": 1},1000);
     $(".career").delay(500).stop().animate({"opacity": 1},1000);
-
-    $(".info_more").stop().animate(
+    // $("#bgwhite2").delay(500).stop().animate({"opacity": 1},1000);
+    $(".info_more").delay(500).stop().animate(
         {
             "width": "330px",
             "border-top-right-radius": "40px"
         }
         ,500)
-
+  }
+  function func3() {
+    $(".info_stat").stop().animate({"width": "375px",
+      "border-radius": "40px"},1000);
   }
 function refunc1(){
   $(".info_stat").delay(5).stop().animate({"width": "50px"},800);
@@ -69,10 +72,16 @@ let observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
       if (entry.isIntersecting && !isFuncRunning) {
           // 요소가 화면에 보이면 func 함수 실행
+
           if($(window).width() < 1480) {
             // window 크기가 1480px보다 작을때
             func2();
-            } else {
+            }
+          if($(window).width() < 768) {
+            // window 크기가 768px보다 작을때
+            func3();
+            }
+          else {
             // window 크기가 1480px보다 클때
             func1();
 
@@ -81,11 +90,17 @@ let observer = new IntersectionObserver((entries, observer) => {
       } else {
           // 요소가 화면에서 사라지면 추가 작업을 여기서 할 수 있음 (선택사항)
           // 요소가 화면에 보이면 func 함수 실행
+
           if($(window).width() < 1480) {
             // window 크기가 1480px보다 작을때
             refunc2();    
             
-            } else {
+            }
+            if($(window).width() < 768) {
+              // window 크기가 768px보다 작을때
+              func3();
+              }
+               else {
             // window 크기가 1480px보다 클때
           refunc1();
 
@@ -196,7 +211,6 @@ let text = "PORTFOLIO";
         // 관찰할 대상 선택
         let target2 = document.querySelector('.sec01');
         obs.observe(target2);
-
 
 
 

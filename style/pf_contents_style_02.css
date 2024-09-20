@@ -1,0 +1,45 @@
+.pf_content {
+  width: calc(100vw - 450px);
+}
+.pf_content > img {
+  width: 100%;
+}
+
+.c01 {
+ display: block;
+}
+.c02 {
+  display: none;
+}
+
+.contBTN {
+  position: fixed;
+  top: 20px;
+  left: calc(50% + 225px);
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  z-index: 9999;
+
+  width: 410px;
+  height: 40px;
+  padding: 0 30px;
+
+  background-color: #ffffff;
+  border-radius: 50px;
+  background-color: rgba(255,255,192,0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 2px 7px 15px 8px rgba(0,0,0,0.3);
+}
+
+.contBTN li {
+  float: left;
+  cursor: pointer;
+}
+.contBTN li:hover {
+  font-weight: bold;
+  box-sizing: border-box;
+}
